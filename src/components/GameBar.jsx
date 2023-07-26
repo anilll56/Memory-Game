@@ -30,13 +30,14 @@ function GameBar({ userName, isFinished }) {
 
     return () => clearInterval(interval);
   }, []);
-  console.log(time);
 
+  // sıralamayı getirir
   useEffect(() => {
     getAllScores().then((sortedScores) => {
       setScores(sortedScores);
     });
   }, []);
+
   useEffect(() => {
     if (isFinished) {
       addScore(userName, time);
@@ -63,13 +64,16 @@ function GameBar({ userName, isFinished }) {
           </div>
           {scores.map((score, index) => {
             return (
-              <div className="gamebar-item" key={index}>
-                <div className="gamebar-item-score">
-                  {index + 1}
-                  {""}{" "}
+              <div className="gamebar-list-item" key={index}>
+                <div className="gamebar-list-item-left-side">
+                  <div className="gamebar--list-item-score">
+                    {index + 1}
+                    {""}
+                    {") "}
+                  </div>
+                  <div className="gamebar-list-item-name">{score.name}</div>
                 </div>
-                <div className="gamebar-item-name">{score.name}</div>
-                <div className="gamebar-item-time">{score.time}</div>
+                <div className="gamebar-list-item-time">{score.time}</div>
               </div>
             );
           })}

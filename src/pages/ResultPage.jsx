@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./resultPage.css";
 import { getAllScores, getScoreByName } from "../indexDb/Registion";
 import { useNavigate } from "react-router-dom";
+import ReactConfetti from "react-confetti";
 
 function ResultPage({ userName }) {
   const [scores, setScores] = useState([]);
   const [resultTime, setResultTime] = useState();
+  const [resultMoves, setResultMoves] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,9 +22,10 @@ function ResultPage({ userName }) {
         setResultTime("0:00");
       } else {
         setResultTime(score.time);
+        setResultMoves(score.moves);
       }
     });
-  }, []);
+  }, [userName]);
 
   const RestartGame = () => {
     navigate("/");
@@ -30,6 +33,7 @@ function ResultPage({ userName }) {
 
   return (
     <div className="result-page">
+      <ReactConfetti />
       <div className="result-page-content">
         <div className="result-page-header">
           <h1 className="header-item">Tebrikler , {userName} </h1>

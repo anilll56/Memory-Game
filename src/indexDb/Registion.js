@@ -1,6 +1,6 @@
 import Dexie from "dexie";
 
-const db = new Dexie("MyDatabase");
+const db = new Dexie("MemoryGame-DB");
 db.version(1).stores({ scores: "++id, name, time" });
 
 // Yeni bir skor eklemek için fonksiyon

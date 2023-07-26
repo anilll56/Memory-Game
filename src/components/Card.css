@@ -71,7 +71,7 @@
 .card-item-check {
   position: absolute;
   font-size: 3rem;
-  color: #12c65a;
+  color: #2fe97a;
 }
 .card-close {
   width: 100%;
@@ -88,4 +88,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
 }

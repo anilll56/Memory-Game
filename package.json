@@ -10,6 +10,7 @@
     "dexie": "^3.2.4",
     "dexie-react-hooks": "^1.1.6",
     "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",

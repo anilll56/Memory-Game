@@ -1,17 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Card.css";
-import { useEffect } from "react";
-import { GrCheckmark } from "react-icons/gr";
-const Card = ({
-  card,
-  onClick,
-  isSelectCard,
-  isMatched,
-  corretCards,
-  flip,
-}) => {
-  // "isSelectCard" ve "isMatched" prop'larını kullanarak kartın başlangıç durumunu belirleyin.
-
+import { TfiCheck } from "react-icons/tfi";
+const Card = ({ card, onClick, isSelectCard, flip }) => {
   const handleCardClick = () => {
     if (!isSelectCard) {
       onClick(card);
@@ -25,7 +15,7 @@ const Card = ({
             <div className="card-item-matched">
               <img className="card-item-img" src={card.img} alt={card.name} />
             </div>
-            <GrCheckmark className="card-item-check" />
+            <TfiCheck className="card-item-check" />
           </div>
         </div>
       ) : (
@@ -37,7 +27,7 @@ const Card = ({
               </div>
             ) : (
               <div className="card-item-back" onClick={handleCardClick}>
-                {card.name}
+                ?
               </div>
             )}
           </div>

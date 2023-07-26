@@ -5,28 +5,25 @@ import { useState } from "react";
 import AnimalData from "./Items";
 import { useNavigate } from "react-router-dom";
 
-// afıza oyunu: 8x8 kareden oluşan rasgele dizilmiş çift resimlerin bularak tüm resimlerin yerlerini bulma oyunu yap
-// 1. resimlerin yerlerini rasgele diz
-// 2. resimlerin yerlerini bulma
-// 3. resimlerin yerlerini bulduğunda eşleştiğini göster
-// 4. resimlerin yerlerini bulduğunda eşleşmediğini göster
-// 5. tüm resimlerin yerlerini bulduğunda oyunu bitir
-// 6. oyunu bitirdiğinde skor tablosuna kaydet
-// 7. skor tablosunu göster
-// 8. skor tablosundan oyunu başlat (1. adıma git)
-
 function GameBoard({ isFinished, setIsFinished }) {
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
   const [isSelectCard, setIsSelectCard] = useState(false);
+  const [items, setItems] = useState([...AnimalData]);
   const [moves, setMoves] = useState(0);
   const navigate = useNavigate();
+
   const resetTurn = () => {
     setIsSelectCard(false);
     setFirstCard(null);
     setSecondCard(null);
     setMoves(moves + 1);
   };
+  console.log(moves);
+
+  useEffect(() => {
+    setItems(shuffleCards(AnimalData));
+  }, []);
 
   useEffect(() => {
     if (isFinished) {
@@ -66,7 +63,6 @@ function GameBoard({ isFinished, setIsFinished }) {
     return shuffledArray;
   };
 
-  const [items, setItems] = useState(shuffleCards(AnimalData));
   useEffect(() => {
     if (items.every((item) => item.isMatched === true)) {
       setIsFinished(true);
@@ -101,7 +97,6 @@ function GameBoard({ isFinished, setIsFinished }) {
               ))}
             </div>
           </div>
-          <div className="memory-game-footer">time </div>
         </div>
       </div>
     </div>
