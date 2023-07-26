@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import RegiserPage from "./components/RegiserPage";
+import Content from "./components/Content";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
+  const [userName, setUserName] = useState("");
+  const [isFinished, setIsFinished] = useState(false);
+  console.log(userName);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <RegiserPage
+              userName={userName}
+              setUserName={setUserName}
+              isFinished={isFinished}
+            />
+          }
+        ></Route>
+        <Route
+          path="/Game"
+          element={
+            <Content
+              userName={userName}
+              isFinished={isFinished}
+              setIsFinished={setIsFinished}
+            />
+          }
+        ></Route>
+        <Route
+          path="/Result"
+          element={<ResultPage userName={userName} />}
+        ></Route>
+      </Routes>
     </div>
   );
 }

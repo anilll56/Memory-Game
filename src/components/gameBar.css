@@ -1,0 +1,48 @@
+.gamebar-container {
+  width: 20%;
+  height: 100vh;
+  background-color: #f5f5f5;
+  margin: 5px;
+}
+.gamebar {
+  height: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: blueviolet;
+}
+.player-content {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 5%;
+}
+.player-item {
+  display: flex;
+  font-size: 20px;
+}
+.gamebar-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.gamebar-content {
+  overflow: hidden;
+}
+.gamebar-item {
+  display: flex;
+  padding: 4px;
+  margin: 3px;
+  border-radius: 3px;
+  border-bottom: 2px solid #ccc;
+}
+.gamebar-item-left-side {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.gamebar-item-time {
+  width: 60%;
+  display: flex;
+  justify-content: end;
+}

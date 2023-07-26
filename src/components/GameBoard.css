@@ -1,0 +1,39 @@
+/* Sayfanın ortalanması */
+.content {
+  height: 100vh;
+}
+/* Memory Game konteynerı */
+.memory-game {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Başlık */
+.memory-game h1 {
+  font-size: 24px;
+
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Kartlar için tahtanın genel görünümü */
+.memory-game-board {
+  width: 900px;
+  height: 900px;
+  height: auto;
+  background-color: brown;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Kartların sıralanacağı satır */
+.memory-game-board-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
