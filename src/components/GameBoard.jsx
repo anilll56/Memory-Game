@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import "./GameBoard.css";
 import Card from "./Card";
-import { useState } from "react";
 import AnimalData from "./Items";
 import { useNavigate } from "react-router-dom";
 
@@ -13,13 +12,12 @@ function GameBoard({ isFinished, setIsFinished }) {
   const [moves, setMoves] = useState(0);
   const navigate = useNavigate();
 
-  const resetTurn = () => {
+  const resetTurn = useCallback(() => {
     setIsSelectCard(false);
     setFirstCard(null);
     setSecondCard(null);
     setMoves(moves + 1);
-  };
-  console.log(moves);
+  }, [moves]);
 
   useEffect(() => {
     setItems(shuffleCards(AnimalData));
@@ -30,7 +28,7 @@ function GameBoard({ isFinished, setIsFinished }) {
       navigate("/Result");
       setIsFinished(false);
     }
-  }, [isFinished]);
+  }, [isFinished, navigate, setIsFinished]);
 
   useEffect(() => {
     if (firstCard != null && secondCard != null) {
@@ -52,7 +50,7 @@ function GameBoard({ isFinished, setIsFinished }) {
         }, 1000);
       }
     }
-  }, [firstCard, secondCard]);
+  }, [firstCard, secondCard, setIsSelectCard, resetTurn]);
 
   const shuffleCards = (array) => {
     const shuffledArray = [...array, ...array]
@@ -67,7 +65,7 @@ function GameBoard({ isFinished, setIsFinished }) {
     if (items.every((item) => item.isMatched === true)) {
       setIsFinished(true);
     }
-  }, [items]);
+  }, [items, setIsFinished]);
 
   const handleCardClick = (card) => {
     if (firstCard == null) {
