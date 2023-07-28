@@ -9,6 +9,7 @@ function GameBoard({ isFinished, setIsFinished }) {
   const [secondCard, setSecondCard] = useState(null);
   const [isSelectCard, setIsSelectCard] = useState(false);
   const [items, setItems] = useState([...AnimalData]);
+  const [isLoading, setIsLoading] = useState(true);
   const [moves, setMoves] = useState(0);
   const navigate = useNavigate();
 
@@ -75,25 +76,37 @@ function GameBoard({ isFinished, setIsFinished }) {
     }
   };
 
+  useEffect(() => {
+    // Simulating image loading delay
+    setTimeout(() => {
+      setItems(shuffleCards(AnimalData));
+      setIsLoading(false); // Set isLoading to false after images are loaded
+    }, 2000); // Replace 2000 with the desired loading delay in milliseconds
+  }, []);
+
   return (
     <div className="content">
       <div className="memory-game">
         <div className="memory-game-content">
           <div className="memory-game-board">
-            <div className="memory-game-board-row">
-              {items.map((item) => (
-                <Card
-                  key={item.id}
-                  card={item}
-                  onClick={() => {
-                    handleCardClick(item);
-                  }}
-                  isSelectCard={isSelectCard}
-                  isMatched={item === firstCard || item === secondCard}
-                  flip={firstCard === item || secondCard === item}
-                />
-              ))}
-            </div>
+            {isLoading ? (
+              <div className="loading">Loading...</div>
+            ) : (
+              <div className="memory-game-board-row">
+                {items.map((item) => (
+                  <Card
+                    key={item.id}
+                    card={item}
+                    onClick={() => {
+                      handleCardClick(item);
+                    }}
+                    isSelectCard={isSelectCard}
+                    isMatched={item === firstCard || item === secondCard}
+                    flip={firstCard === item || secondCard === item}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
