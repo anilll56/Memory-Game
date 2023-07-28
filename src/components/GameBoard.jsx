@@ -3,6 +3,7 @@ import "./GameBoard.css";
 import Card from "./Card";
 import AnimalData from "./Items";
 import { useNavigate } from "react-router-dom";
+import ReactLoading from "react-loading";
 
 function GameBoard({ isFinished, setIsFinished }) {
   const [firstCard, setFirstCard] = useState(null);
@@ -43,7 +44,6 @@ function GameBoard({ isFinished, setIsFinished }) {
             return item;
           });
         });
-        console.log("Eşleşme var");
         resetTurn();
       } else {
         setTimeout(() => {
@@ -79,7 +79,7 @@ function GameBoard({ isFinished, setIsFinished }) {
   useEffect(() => {
     setTimeout(() => {
       setLoadItem(false);
-    }, 3000);
+    }, 5000);
   }, []);
 
   return (
@@ -87,7 +87,16 @@ function GameBoard({ isFinished, setIsFinished }) {
       <div className="memory-game">
         <div className="memory-game-content">
           <div className="memory-game-board">
-            {LoadItem && <div className="loading">loading...</div>}
+            {LoadItem && (
+              <div className="loading">
+                <ReactLoading
+                  type={"spinningBubbles"}
+                  color="black"
+                  height={80}
+                  width={80}
+                />
+              </div>
+            )}
             <div className="memory-game-board-row">
               {items.map((item) => (
                 <Card
