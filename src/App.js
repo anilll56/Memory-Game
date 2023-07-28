@@ -8,7 +8,6 @@ import ResultPage from "./pages/ResultPage";
 function App() {
   const [userName, setUserName] = useState("");
   const [isFinished, setIsFinished] = useState(false);
-  const [moves, setMoves] = useState(0);
   return (
     <div className="App">
       <Routes>
@@ -29,8 +28,6 @@ function App() {
               userName={userName}
               isFinished={isFinished}
               setIsFinished={setIsFinished}
-              moves={moves}
-              setMoves={setMoves}
             />
           }
         ></Route>

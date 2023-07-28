@@ -7,7 +7,6 @@ import ReactConfetti from "react-confetti";
 function ResultPage({ userName }) {
   const [scores, setScores] = useState([]);
   const [resultTime, setResultTime] = useState();
-  const [resultMoves, setResultMoves] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,7 +21,6 @@ function ResultPage({ userName }) {
         setResultTime("0:00");
       } else {
         setResultTime(score.time);
-        setResultMoves(score.moves);
       }
     });
   }, [userName]);
