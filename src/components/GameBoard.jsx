@@ -79,7 +79,7 @@ function GameBoard({ isFinished, setIsFinished }) {
   useEffect(() => {
     setTimeout(() => {
       setLoadItem(false);
-    }, 5000);
+    }, 8000);
   }, []);
 
   return (

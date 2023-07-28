@@ -12,7 +12,7 @@ const Card = ({ card, onClick, isSelectCard, flip }) => {
   useEffect(() => {
     setTimeout(() => {
       setShowCard(false);
-    }, 8000);
+    }, 10000);
   }, []);
   return (
     <>
