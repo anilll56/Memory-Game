@@ -5,10 +5,10 @@ import { addScore, getAllScores } from "../indexDb/Registion";
 function GameBar({ userName, isFinished }) {
   const [scores, setScores] = useState([]);
   const [time, setTime] = useState();
-  var minutes = 0;
-  var seconds = 0;
 
   useEffect(() => {
+    var minutes = 0;
+    var seconds = 0;
     const interval = setInterval(() => {
       if (!isFinished) {
         seconds = seconds + 1;
@@ -29,7 +29,7 @@ function GameBar({ userName, isFinished }) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isFinished]);
 
   // sıralamayı getirir
   useEffect(() => {
@@ -45,7 +45,7 @@ function GameBar({ userName, isFinished }) {
         setScores(sortedScores);
       });
     }
-  }, [isFinished]);
+  }, [isFinished, userName, time]);
   return (
     <div className="gamebar-container">
       <div className="gamebar">
