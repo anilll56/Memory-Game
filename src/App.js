@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import RegiserPage from "./components/RegiserPage";
-import Content from "./components/Content";
+import RegiserPage from "./pages/RegiserPage";
+import Content from "./pages/Content";
 import ResultPage from "./pages/ResultPage";
 
 function App() {

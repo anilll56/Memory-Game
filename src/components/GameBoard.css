@@ -27,7 +27,7 @@
 
 .memory-game-board-row {
   display: grid;
-  grid-template-columns: repeat(8, 0.5fr);
+  grid-template-columns: repeat(6, 0.5fr);
   justify-content: center;
   width: 100%;
   margin-bottom: 10px;

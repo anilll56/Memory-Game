@@ -1,6 +1,6 @@
 import React from "react";
-import GameBar from "./GameBar";
-import GameBoard from "./GameBoard";
+import GameBar from "../components/GameBar";
+import GameBoard from "../components/GameBoard";
 
 function Content({ userName, isFinished, setIsFinished }) {
   return (

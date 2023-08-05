@@ -16,20 +16,6 @@ import Duck from "../photos/duck.jpg";
 import Penguin from "../photos/penguin.jpg";
 import ButterFly from "../photos/butterfly.jpg";
 import Fish from "../photos/fish.jpg";
-import Snake from "../photos/snake.jpg";
-import Bear from "../photos/bear.jpg";
-import Fox from "../photos/fox.jpg";
-import Wolf from "../photos/wolf.jpg";
-import Adler from "../photos/adler.jpg";
-import Squirrel from "../photos/squirrel.jpg";
-import Leopard from "../photos/leopard.jpg";
-import Hedgehog from "../photos/hedgehog.jpg";
-import Crocodile from "../photos/crocodile.jpg";
-import Bat from "../photos/bat.jpg";
-import Bee from "../photos/bee.jpg";
-import whale from "../photos/whale.jpg";
-import Toucan from "../photos/toucan.jpg";
-import Puma from "../photos/puma.jpg";
 const items = [
   { id: 1, name: "Lion", img: Lion },
   {
@@ -132,90 +118,6 @@ const items = [
     id: 18,
     name: "Fish",
     img: Fish,
-    isMatched: false,
-  },
-  {
-    id: 19,
-    name: "Snake",
-    img: Snake,
-    isMatched: false,
-  },
-  {
-    id: 20,
-    name: "Bear",
-    img: Bear,
-    isMatched: false,
-  },
-  {
-    id: 21,
-    name: "Fox",
-    img: Fox,
-    isMatched: false,
-  },
-  {
-    id: 22,
-    name: "Wolf",
-    img: Wolf,
-    isMatched: false,
-  },
-  {
-    id: 23,
-    name: "Adler",
-    img: Adler,
-    isMatched: false,
-  },
-  {
-    id: 24,
-    name: "Squirrel",
-    img: Squirrel,
-    isMatched: false,
-  },
-  {
-    id: 25,
-    name: "Leopard",
-    img: Leopard,
-    isMatched: false,
-  },
-  {
-    id: 26,
-    name: "Hedgehog",
-    img: Hedgehog,
-    isMatched: false,
-  },
-  {
-    id: 27,
-    name: "Crocodile",
-    img: Crocodile,
-    isMatched: false,
-  },
-  {
-    id: 28,
-    name: "Bat",
-    img: Bat,
-    isMatched: false,
-  },
-  {
-    id: 29,
-    name: "Bee",
-    img: Bee,
-    isMatched: false,
-  },
-  {
-    id: 30,
-    name: "whale",
-    img: whale,
-    isMatched: false,
-  },
-  {
-    id: 31,
-    name: "Toucan",
-    img: Toucan,
-    isMatched: false,
-  },
-  {
-    id: 32,
-    name: "Puma",
-    img: Puma,
     isMatched: false,
   },
 ];
